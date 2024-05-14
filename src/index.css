@@ -25,6 +25,7 @@ border: 2px solid var(--Neutrals-400, #CBD2E0);
 background: var(--Neutrals-White, #FFF);
 padding: 12px 12px 12px 16px;
 margin-bottom: 20px;
+cursor: pointer;
 }
 .from-value select {
 -webkit-appearance: none;
@@ -33,9 +34,28 @@ background: url(./assets/arrow-down.svg);
 background-position: 98%;
 background-repeat: no-repeat;
 }
-
-
-
+.from-value input[type=checkbox] {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+    outline: 0;
+    padding: 0 !important;
+    vertical-align: text-top;
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+    opacity: 0.5;
+}
+.from-value input[type=checkbox]:checked {
+  background: url(./assets/checked.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  opacity: 1;
+}
 
 
 

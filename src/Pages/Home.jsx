@@ -24,7 +24,7 @@ export default function Home() {
           <form action="" className="from-value">
             <div className="grid grid-cols-3 gap-x-[38px]">
               <div className="flex flex-col">
-                <label className="text-sm">Price Range</label>
+                <label className="text-sm mb-[8px]">Price Range</label>
                 <select className="border-field">
                   <option value="ExclusivBELKASSE">
                     {"Exclusiv (BEL/KASSE)"}
@@ -47,19 +47,19 @@ export default function Home() {
                   <input type="checkbox" name="myCheckbox" />
                 </label>
 
-                <label className="text-sm">Unterkiefer</label>
+                <label className="text-sm mb-[8px]">Unterkiefer</label>
                 <select className="border-field">
                   <option value="yes">Ja</option>
                   <option value="no">Nein</option>
                 </select>
 
-                <label className="text-sm">Gesichtsbogen</label>
+                <label className="text-sm mb-[8px]">Gesichtsbogen</label>
                 <select className="border-field">
                   <option value="digital">Digital</option>
                   <option value="Konventionell">Konventionell</option>
                 </select>
 
-                <label> Kronen- & Brückentechnik</label>
+                <label className="text-sm mb-[8px]"> Kronen- & Brückentechnik</label>
                 <select className="border-field">
                   <option value="b">B</option>
                   <option value="">K</option>
@@ -69,13 +69,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label> Krankenkasse</label>
+                <label className="text-sm mb-[8px]"> Krankenkasse</label>
                 <input className="border-field" type="text" name="" />
-                <label> Implantatsystem</label>
+                <label className="text-sm mb-[8px]"> Implantatsystem</label>
                 <input className="border-field" type="text" name="" />
               </div>
               <div className="flex flex-col">
-                <label>Material</label>
+                <label className="text-sm mb-[8px]">Material</label>
                 <select className="border-field">
                   <option value="zirkon">Zirkon</option>
                   <option value="otherOption">NEM</option>
@@ -89,7 +89,6 @@ export default function Home() {
                 <label className="border-field flex justify-between items-center">
                   IOS Model
                   <input type="checkbox" name="myCheckbox"/>
-                  <span></span>
                 </label>
               </div>
             </div>
