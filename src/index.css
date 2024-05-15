@@ -96,3 +96,17 @@ table.custom-table tbody tr:last-child {
 .border-right-sec {
   border-right: 3px solid #898787;
 }
+.breadcrumb-item.active {
+  color: #007bff; /* Active item color */
+}
+
+.breadcrumb-item:not(.active) {
+  color: #6c757d; /* Inactive item color */
+}
+
+
+
+
+
+
+

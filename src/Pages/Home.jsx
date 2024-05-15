@@ -1,5 +1,4 @@
 import Header from "../Components/Header";
-import Breadcrums from "../Components/Breadcrums";
 import ContactDetails from "../Components/ContactDetails";
 import TableData from "../Components/TableData";
 import { Link } from "react-router-dom";
@@ -9,8 +8,6 @@ export default function Home() {
     ['OK', '18', '17', '16', '15', '14', '13','12','11','21', '22', '23', '24', '25', '26', '27', '28'],
     ['UK', '48', '47', '46', '45', '44', '43','42','41','31', '32', '33', '34', '35', '36', '37', '38'],
 
-
-    // Add more rows if needed
   ];
   return (
     <div>
@@ -20,7 +17,10 @@ export default function Home() {
           <p className='<div class="text-black text-2xl font-normal'>
             We ask for a cost estimate
           </p>
-          <Breadcrums />
+          <div className='justify-center items-center gap-2.5 flex'>
+      <Link className='inline-block place-items-center grid w-[74px] h-[74px] bg-yellow-400 rounded-full text-white text-2xl font-semibold' to="/" >1</Link>
+      <Link className='inline-block place-items-center grid w-[74px] h-[74px] bg-[#D1D1D1] rounded-full text-white text-2xl font-semibold' to="/pdf" >2</Link>
+    </div>
         </div>
       </section>
       <section className="form-element container mx-auto px-5 py-[80px]">
