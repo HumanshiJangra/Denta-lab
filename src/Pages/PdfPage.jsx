@@ -5,7 +5,7 @@ export default function PdfPage() {
   return (
     <div>
       <Header />
-      <section className='breadcrum-section container mx-auto'>
+      <section className='breadcrum-section pt-[64px] container mx-auto px-5'>
       <div className="justify-between items-center flex ">
         <p className='<div class="text-black text-2xl font-normal'>Your estimate</p>
       <Breadcrums />
