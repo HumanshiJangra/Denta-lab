@@ -2,53 +2,62 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+
 body {
   font-family: "Inter", sans-serif;
 }
+
 * {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
 }
+
 .from-value label {
   color: #1A1613;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.16px;
 }
+
 .border-field {
   border-radius: 6px;
-border: 2px solid var(--Neutrals-400, #CBD2E0);
-background: var(--Neutrals-White, #FFF);
-padding: 12px 12px 12px 16px;
-margin-bottom: 20px;
-cursor: pointer;
+  border: 2px solid var(--Neutrals-400, #CBD2E0);
+  background: var(--Neutrals-White, #FFF);
+  padding: 12px 12px 12px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
+
 .from-value select {
--webkit-appearance: none;
-appearance: none;
-background: url(./assets/arrow-down.svg);
-background-position: 98%;
-background-repeat: no-repeat;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url(./assets/arrow-down.svg);
+  background-position: 98%;
+  background-repeat: no-repeat;
+  width: 100%;
 }
+
 .from-value input[type=checkbox] {
-    position: relative;
-    border: 2px solid transparent;
-    border-radius: 2px;
-    background: none;
-    cursor: pointer;
-    line-height: 0;
-    outline: 0;
-    padding: 0 !important;
-    vertical-align: text-top;
-    height: 20px;
-    width: 20px;
-    -webkit-appearance: none;
-    opacity: 0.5;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+  outline: 0;
+  padding: 0 !important;
+  vertical-align: text-top;
+  height: 20px;
+  width: 20px;
+  -webkit-appearance: none;
+  opacity: 0.5;
 }
+
 .from-value input[type=checkbox]:checked {
   background: url(./assets/checked.svg);
   background-repeat: no-repeat;
@@ -57,11 +66,30 @@ background-repeat: no-repeat;
   opacity: 1;
 }
 
+button.button {
+  border-radius: 4px;
+  background: #F7CF47;
+  padding: 10px 24px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: normal;
+}
 
-
-
-
-
-
-
-
+input:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+table.custom-table thead th:first-child select {
+  display: none;
+}
+table.custom-table thead th {
+  font-weight: 400;
+}
+table.custom-table td, table.custom-table th {
+  padding: 10px;
+}
+table.custom-table tbody tr:last-child {
+  display: none;
+}

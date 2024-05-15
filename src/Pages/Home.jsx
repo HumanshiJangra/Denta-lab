@@ -1,10 +1,17 @@
-import React from "react";
-import { toast } from "react-toastify";
-import { useState } from "react";
 import Header from "../Components/Header";
 import Breadcrums from "../Components/Breadcrums";
+import ContactDetails from "../Components/ContactDetails";
+import TableData from "../Components/TableData";
+import { Link } from "react-router-dom";
 
 export default function Home() {
+  const tableBodyData = [
+    ['OK', '18', '17', '16', '15', '14', '13','12','11','21', '22', '23', '24', '25', '26', '27', '28'],
+    ['UK', '48', '47', '46', '45', '44', '43','42','41','31', '32', '33', '34', '35', '36', '37', '38'],
+
+
+    // Add more rows if needed
+  ];
   return (
     <div>
       <Header />
@@ -16,7 +23,7 @@ export default function Home() {
           <Breadcrums />
         </div>
       </section>
-      <section className="form-element container mx-auto px-5 pt-[80px]">
+      <section className="form-element container mx-auto px-5 py-[80px]">
         <h2 className="text-black text-xl font-normal mb-[20px]">
           Please select your products
         </h2>
@@ -92,9 +99,16 @@ export default function Home() {
                 </label>
               </div>
             </div>
+          <TableData tableBodyData={tableBodyData}  />
+            <div className="flex flex-col">
             <label> Bemerkungen</label>
             <textarea className="border-field" name="text" />
-            <button type="submit">Search</button>
+            </div>
+          <ContactDetails />
+          <div className="mt-[80px]">
+            <button className="button"  type="submit">
+             <Link to="/pdf" >Generate cost estimate </Link></button>
+            </div>
           </form>
         </div>
       </section>
