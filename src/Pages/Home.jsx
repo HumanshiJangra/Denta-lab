@@ -3,7 +3,7 @@ import Breadcrums from "../Components/Breadcrums";
 import ContactDetails from "../Components/ContactDetails";
 import TableData from "../Components/TableData";
 import { Link } from "react-router-dom";
-
+import Description from "../Components/Description";
 export default function Home() {
   const tableBodyData = [
     ['OK', '18', '17', '16', '15', '14', '13','12','11','21', '22', '23', '24', '25', '26', '27', '28'],
@@ -100,8 +100,9 @@ export default function Home() {
               </div>
             </div>
           <TableData tableBodyData={tableBodyData}  />
+          <Description />
             <div className="flex flex-col">
-            <label> Bemerkungen</label>
+            <label  className="text-sm mb-[8px]"> Bemerkungen</label>
             <textarea className="border-field" name="text" />
             </div>
           <ContactDetails />

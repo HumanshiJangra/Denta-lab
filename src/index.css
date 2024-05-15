@@ -93,3 +93,6 @@ table.custom-table td, table.custom-table th {
 table.custom-table tbody tr:last-child {
   display: none;
 }
+.border-right-sec {
+  border-right: 3px solid #898787;
+}
