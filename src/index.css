@@ -41,7 +41,9 @@ img {
   background-repeat: no-repeat;
   width: 100%;
 }
-
+.from-value input[type=text], .from-value textarea {
+  cursor: auto  ;
+}
 .from-value input[type=checkbox] {
   position: relative;
   border: 2px solid transparent;
@@ -81,17 +83,16 @@ input:focus-visible,
 select:focus-visible {
   outline: none;
 }
-table.custom-table thead th:first-child select {
-  display: none;
-}
+
 table.custom-table thead th {
   font-weight: 400;
 }
 table.custom-table td, table.custom-table th {
   padding: 10px;
 }
-table.custom-table tbody tr:last-child {
-  display: none;
+table.custom-table tbody td {
+  border: 1px solid #cbd5e1;
+  text-align: center;
 }
 .border-right-sec {
   border-right: 3px solid #898787;

@@ -2,13 +2,37 @@ import Header from "../Components/Header";
 import ContactDetails from "../Components/ContactDetails";
 import TableData from "../Components/TableData";
 import { Link } from "react-router-dom";
-import Description from "../Components/Description";
-export default function Home() {
-  const tableBodyData = [
-    ['OK', '18', '17', '16', '15', '14', '13','12','11','21', '22', '23', '24', '25', '26', '27', '28'],
-    ['UK', '48', '47', '46', '45', '44', '43','42','41','31', '32', '33', '34', '35', '36', '37', '38'],
 
-  ];
+import { useState } from "react";
+import Description from "../Components/Description";
+import TableNew from "../Components/TableNew";
+export default function Home() {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    age: '',
+    gender: 'male',
+    subscription: [],
+  }); 
+
+  const [showTable, setShowTable] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      const updatedSubscriptions = checked
+        ? [...formData.subscription, value]
+        : formData.subscription.filter((item) => item !== value);
+      setFormData({ ...formData, subscription: updatedSubscriptions });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+  const printData = () => {
+    setShowTable(true);
+  };
+
   return (
     <div>
       <Header />
@@ -28,11 +52,13 @@ export default function Home() {
           Please select your products
         </h2>
         <div className="fields">
+
+          {/* FORM START ------------------------------------------- */}
           <form action="" className="from-value">
             <div className="grid grid-cols-3 gap-x-[38px]">
               <div className="flex flex-col">
                 <label className="text-sm mb-[8px]">Price Range</label>
-                <select className="border-field">
+                <select className="border-field" name="pricerange" value={formData.pricerange} onChange={handleChange}>
                   <option value="ExclusivBELKASSE">
                     {"Exclusiv (BEL/KASSE)"}
                   </option>
@@ -43,47 +69,47 @@ export default function Home() {
 
                 <label className="border-field flex justify-between items-center">
                   Hardship cases/ 100%
-                  <input type="checkbox" name="myCheckbox" />
+                  <input type="checkbox" name="hardshipcase" value="hardship"
+            onChange={handleChange} />
                 </label>
                 <label className="border-field flex justify-between items-center">
                   upper jaw
-                  <input type="checkbox" name="myCheckbox" />
+                  <input type="checkbox" name="upperjaw" value="upperJaw" onChange={handleChange} />
                 </label>
                 <label className="border-field flex justify-between items-center">
                   lower jaw
-                  <input type="checkbox" name="myCheckbox" />
+                  <input type="checkbox" name="lowerjaw" value="lowerJaw"  onChange={handleChange}/>
                 </label>
 
                 <label className="text-sm mb-[8px]">Unterkiefer</label>
-                <select className="border-field">
+                <select className="border-field" name="facebow" value={formData.facebow} onChange={handleChange}>
                   <option value="yes">Ja</option>
                   <option value="no">Nein</option>
                 </select>
 
+                <label className="text-sm mb-[8px]">Arbeitsart</label>
+                <select className="border-field" name="typework" value={formData.typework} onChange={handleChange}>
+                  <option value="">Kronen- und Brückentechnik</option>
+                  <option value=""></option>
+                </select>
+
                 <label className="text-sm mb-[8px]">Gesichtsbogen</label>
-                <select className="border-field">
+                <select className="border-field" name="digital" value={formData.digital} onChange={handleChange}>
                   <option value="digital">Digital</option>
                   <option value="Konventionell">Konventionell</option>
                 </select>
 
-                <label className="text-sm mb-[8px]"> Kronen- & Brückentechnik</label>
-                <select className="border-field">
-                  <option value="b">B</option>
-                  <option value="">K</option>
-                  <option value="">KB</option>
-                  <option value="">BV</option>
-                </select>
               </div>
 
               <div className="flex flex-col">
                 <label className="text-sm mb-[8px]"> Krankenkasse</label>
-                <input className="border-field" type="text" name="" />
+                <input className="border-field" type="text" name="health" value={formData.health} onChange={handleChange} />
                 <label className="text-sm mb-[8px]"> Implantatsystem</label>
-                <input className="border-field" type="text" name="" />
+                <input className="border-field" type="text" name="implant" value={formData.implant} onChange={handleChange}/>
               </div>
               <div className="flex flex-col">
                 <label className="text-sm mb-[8px]">Material</label>
-                <select className="border-field">
+                <select className="border-field" name="material" value={formData.material} onChange={handleChange}>
                   <option value="zirkon">Zirkon</option>
                   <option value="otherOption">NEM</option>
                   <option value="edelmetall">Edelmetall</option>
@@ -91,24 +117,60 @@ export default function Home() {
                 </select>
                 <label className="border-field flex justify-between items-center">
                   Vollantom.
-                  <input type="checkbox" name="myCheckbox" />
+                  <input type="checkbox" name="full" value="fullantom"
+            onChange={handleChange} />
                 </label>
                 <label className="border-field flex justify-between items-center">
                   IOS Model
-                  <input type="checkbox" name="myCheckbox"/>
+                  <input type="checkbox" name="ios" value="iosm"
+            onChange={handleChange}/>
                 </label>
               </div>
             </div>
-          <TableData tableBodyData={tableBodyData}  />
+          <TableNew />
           <Description />
             <div className="flex flex-col">
             <label  className="text-sm mb-[8px]"> Bemerkungen</label>
             <textarea className="border-field" name="text" />
             </div>
-          <ContactDetails />
+            <div className="w-[50%]">
+        <h2 className="mb-[30px] mt-[80px]">Kontakt-Daten</h2>
+      <form className="" action="">
+        <div className="flex flex-col">
+          <label className="text-sm mb-[8px]">Surname *</label>
+          <input className="border-field" type="text" name="" />
+
+          <label className="text-sm mb-[8px]">House no. *</label>
+          <input className="border-field" type="text" name="" />
+
+          <div className="flex gap-[12px]">
+            <div className="flex flex-col w-[50%]">
+              <label className="text-sm mb-[8px]">Postcode *</label>
+              <input className="border-field" type="text" name="" />
+            </div>
+
+            <div className="flex flex-col w-[50%]">
+              <label className="text-sm mb-[8px]">Location *</label>
+              <input className="border-field" type="text" name="" />
+            </div>
+          </div>
+            <h2 className="mt-[36px] mb-[22px]">Zusätzliche Informationen</h2>
+          <div className="flex gap-[12px]">
+            <div className="flex flex-col w-[50%]">
+              <label className="text-sm mb-[8px]">Email doctor *</label>
+              <input className="border-field" type="text" name="" />
+            </div>
+
+            <div className="flex flex-col w-[50%]">
+              <label className="text-sm mb-[8px]">More email</label>
+              <input className="border-field" type="text" name="" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
           <div className="mt-[80px]">
-            <button className="button"  type="submit">
-             <Link to="/pdf" >Generate cost estimate </Link></button>
+            <button onClick={printData} className="button"  type="submit">Generate cost estimate</button>
             </div>
           </form>
         </div>
