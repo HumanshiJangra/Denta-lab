@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../Components/Header';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-
+import { Counter } from '../Features/Counter/Counter';
+import PrintData from '../Components/PrintData';
+import generatePDF from '../Pages/Sample'
 export default function PdfPage() {
   // const generatePDF = () => {
   //   if (!showTable) {
@@ -34,15 +36,14 @@ export default function PdfPage() {
         </div>
       </section>
       <section className="container mx-auto px-5">
-        <div className="pt-[40px]">
+        <div className="py-[40px]">
           <h2>Ihr Kostenvoranschlag wurde erfolgreich generiert und an folgende Email Adressen geschickt.</h2>
         </div>
+      {/* <Counter /> */}
+      <PrintData />
 
-
-        <button className="button" type="submit">
-          <Link to="/pdf">Generate cost estimate</Link>
-        </button>
       </section>
+
     </div>
   );
 }

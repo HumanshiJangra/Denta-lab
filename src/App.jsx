@@ -9,11 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Sample />,
   },
   {
-    path: "/sample",
-    element: <Sample />
+    path: "/home",
+    element: <Home />
   },
   {
     path: "/pdf",

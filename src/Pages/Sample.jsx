@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
+import Header from "../Components/Header";
 import TableNew from "../Components/TableNew";
-
+import { Link } from "react-router-dom";
+import logo from '../assets/image 7.png'
+import { useNavigate } from 'react-router-dom';
 const FormComponent = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +18,26 @@ const FormComponent = () => {
       promotions: false,
     },
     hobbies: [],
+    pricerange: "",
+    facebow: "",
+    typework: "",
+    digital: "",
+    health: "",
+    implant: "",
+    textarea: "",
+    surname: "",
+    houseno: "",
+    postcode: "",
+    location: "",
+    yourmail: "",
+    hardshipcase: false,
+    upperjaw: false,
+    lowerjaw: false,
+    full: false,
+    ios: false,
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -52,10 +74,24 @@ const FormComponent = () => {
       pdf.save("form-data.pdf");
     });
   };
-
+  const handleSubmit = () => {
+    navigate('/pdf', { state: { formData } });
+  };
   return (
     <div className="container mx-auto px-5">
-      <form action="" className="from-value">
+      <Header />
+      <section className="breadcrum-section pt-[64px] container mx-auto px-5">
+        <div className="justify-between items-center flex">
+          <p className='<div class="text-black text-2xl font-normal'>
+            We ask for a cost estimate
+          </p>
+          <div className='justify-center items-center gap-2.5 flex'>
+      <Link className='inline-block place-items-center grid w-[74px] h-[74px] bg-yellow-400 rounded-full text-white text-2xl font-semibold' to="/" >1</Link>
+      <Link className='inline-block place-items-center grid w-[74px] h-[74px] bg-[#D1D1D1] rounded-full text-white text-2xl font-semibold' to="/pdf" >2</Link>
+    </div>
+        </div>
+      </section>
+      <form action="" className="from-value py-[80px]">
         <div className="grid grid-cols-3 gap-x-[38px]">
           <div className="flex flex-col">
             <label className="text-sm mb-[8px]">Price Range</label>
@@ -270,20 +306,22 @@ const FormComponent = () => {
       </form>
       <div>
         <div className="mt-[80px]">
-          <button onClick={generatePDF} className="button" type="submit">
+          <button onClick={handleSubmit} className="button mr-4" type="submit">
             Generate cost estimate
           </button>
+          {/* <button onClick={generatePDF} className="button" type="submit">
+            Submit
+          </button> */}
         </div>
       </div>
       <div>
-        <h1 className="text-[40px] text-[red] ">Form Data</h1>
-        <table id="form-table">
+        <h1 className="text-[40px] text-[red] text-center">Form Data</h1>
+        <table className="w-full" id="form-table">
           <tbody>
             <tr>
               <td>Pricerange</td>
               <td>{formData.pricerange}</td>
             </tr>
-
             <tr>
               <td>Facebow</td>
               <td>{formData.facebow}</td>
@@ -318,7 +356,7 @@ const FormComponent = () => {
             </tr>
             <tr>
               <td>Surname</td>
-              <td>{formData.surname} </td>
+              <td>{formData.surname}</td>
             </tr>
             <tr>
               <td>Postcode</td>
@@ -337,10 +375,25 @@ const FormComponent = () => {
               <td>{formData.yourmail}</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Hardship case</td>
+              <td>{formData.hardshipcase ? "Selected" : "Not Selected"}</td>
             </tr>
-
+            <tr>
+              <td>Upper jaw</td>
+              <td>{formData.upperjaw ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>Lower jaw</td>
+              <td>{formData.lowerjaw ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>Fullantom</td>
+              <td>{formData.full ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>IOS Model</td>
+              <td>{formData.ios ? "Selected" : "Not Selected"}</td>
+            </tr>
             {Object.entries(formData.subscriptions).map(
               ([key, value]) =>
                 value && (
@@ -359,6 +412,7 @@ const FormComponent = () => {
           </tbody>
         </table>
       </div>
+
       <TableNew />
     </div>
   );
