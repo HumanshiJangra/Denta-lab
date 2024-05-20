@@ -1,19 +1,18 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './Pages/Home';
 import PdfPage from './Pages/PdfPage';
 import { ToastProvider } from 'tw-noti';
-import Sample from './Pages/Sample';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Home from "./Pages/Home"
+import HomeNew from "./Pages/HomeNew"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Sample />,
+    element: <Home />,
   },
   {
-    path: "/home",
-    element: <Home />
+    path: "/homenew",
+    element: <HomeNew />
   },
   {
     path: "/pdf",

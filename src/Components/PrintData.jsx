@@ -8,7 +8,7 @@ import jsPDF from 'jspdf';
 
 export default function PrintData() {
     const location = useLocation();
-    const { formData } = location.state || {};
+    const { formData, tableData } = location.state || {};
 
     const downloadPdf = () => {
       const userConfirmed = window.confirm('Do you want to download the PDF?');
@@ -61,7 +61,7 @@ export default function PrintData() {
 </div>
 </div>
 
-            <TableNew/>
+  <TableNew tableData={tableData}/>
             <Description />
 <textarea className='h-[200px] border-solid border-[grey] border-[1px] w-full p-2' name="" id=""></textarea>
 <p>Hiiiiiiiiiiiiiiiiiii::::{formData.surname}

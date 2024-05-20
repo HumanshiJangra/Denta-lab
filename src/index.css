@@ -44,7 +44,7 @@ img {
 .from-value input[type=text], .from-value textarea {
   cursor: auto  ;
 }
-.from-value input[type=checkbox] {
+.from-value input[type=checkbox], .form-value-field input[type=checkbox]  {
   position: relative;
   border: 2px solid transparent;
   border-radius: 2px;
@@ -60,7 +60,7 @@ img {
   opacity: 0.5;
 }
 
-.from-value input[type=checkbox]:checked {
+.from-value input[type=checkbox]:checked, .form-value-field input[type=checkbox]:checked {
   background: url(./assets/checked.svg);
   background-repeat: no-repeat;
   background-position: center;

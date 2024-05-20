@@ -1,40 +1,121 @@
 import Header from "../Components/Header";
-import ContactDetails from "../Components/ContactDetails";
-import TableData from "../Components/TableData";
-import { Link } from "react-router-dom";
-
-import { useState } from "react";
-import Description from "../Components/Description";
 import TableNew from "../Components/TableNew";
-export default function Home() {
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import Description from "../Components/Description";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from 'yup';
+const Home = () => {
+    const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      age: "",
+      gender: "male",
+      subscriptions: {
+        newsletter: false,
+        updates: false,
+        promotions: false,
+      },
+      hobbies: [],
+      pricerange: "",
+      facebow: "",
+      typework: "",
+      digital: "",
+      health: "",
+      implant: "",
+      textarea: "",
+      surname: "",
+      houseno: "",
+      postcode: "",
+      location: "",
+      yourmail: "",
+      hardshipcase: false,
+      upperjaw: false,
+      lowerjaw: false,
+      full: false,
+      ios: false,
+    });
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    age: '',
-    gender: 'male',
-    subscription: [],
-  }); 
 
-  const [showTable, setShowTable] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      const updatedSubscriptions = checked
-        ? [...formData.subscription, value]
-        : formData.subscription.filter((item) => item !== value);
-      setFormData({ ...formData, subscription: updatedSubscriptions });
+    if (type === "checkbox") {
+      if (name === "subscriptions") {
+        setFormData({
+          ...formData,
+          subscriptions: { ...formData.subscriptions, [value]: checked },
+        });
+      } else if (name === "hobbies") {
+        if (checked) {
+          setFormData({ ...formData, hobbies: [...formData.hobbies, value] });
+        } else {
+          setFormData({
+            ...formData,
+            hobbies: formData.hobbies.filter((hobby) => hobby !== value),
+          });
+        }
+      } else {
+        setFormData({ ...formData, [name]: checked });
+      }
     } else {
       setFormData({ ...formData, [name]: value });
     }
-  };
-  const printData = () => {
-    setShowTable(true);
+    if (name === "material") {
+      updateTableData(value);
+    }
   };
 
+  const [tableData, setTableData] = useState([]);
+  useEffect(() => {
+    updateTableData("zirkon");
+  }, []);
+  const updateTableData = (material) => {
+     let data = [];
+     switch (material) {
+       case "zirkon":
+         data = [
+           { property: "hiiiii", value: "Humanshhiiiiiiii" },
+           { property: "Color", value: "White" },
+           { property: "Cost", value: "$200" },
+         ];
+         break;
+       case "otherOption":
+         data = [
+           { property: "Strength", value: "Medium" },
+           { property: "Color", value: "Grey" },
+           { property: "Cost", value: "$150" },
+         ];
+         break;
+       case "edelmetall":
+         data = [
+           { property: "Reactttttttttt", value: "Very High" },
+           { property: "Color", value: "Gold" },
+           { property: "Cost", value: "$300" },
+         ];
+         break;
+       case "Presskeramik":
+         data = [
+           { property: "Strength", value: "High" },
+           { property: "Color", value: "White" },
+           { property: "Cost", value: "$250" },
+         ];
+         break;
+       default:
+         data = [];
+     }
+     setTableData(data);
+   };
+  const handleSubmit = () => {  
+    console.log("Hiiii These are the form data", formData)
+    
+    navigate('/pdf', { state: { formData } });
+  };
   return (
-    <div>
+    <div className="">
       <Header />
       <section className="breadcrum-section pt-[64px] container mx-auto px-5">
         <div className="justify-between items-center flex">
@@ -47,134 +128,331 @@ export default function Home() {
     </div>
         </div>
       </section>
-      <section className="form-element container mx-auto px-5 py-[80px]">
-        <h2 className="text-black text-xl font-normal mb-[20px]">
-          Please select your products
-        </h2>
-        <div className="fields">
+      <section className="container mx-auto px-5">
+      <form action="" className="from-value py-[80px]">
+        <div className="grid grid-cols-3 gap-x-[38px]">
+          <div className="flex flex-col">
+            <label className="text-sm mb-[8px]">Price Range</label>
+            <select
+              className="border-field"
+              name="pricerange"
+              value={formData.pricerange}
+              onChange={handleChange}
+            >
+              <option value="ExclusivBELKASSE">{"Exclusiv (BEL/KASSE)"}</option>
+              <option value="Preisgünstig">
+                Preisgünstig/ Laufer Zahntechnik
+              </option>
+            </select>
 
-          {/* FORM START ------------------------------------------- */}
-          <form action="" className="from-value">
-            <div className="grid grid-cols-3 gap-x-[38px]">
-              <div className="flex flex-col">
-                <label className="text-sm mb-[8px]">Price Range</label>
-                <select className="border-field" name="pricerange" value={formData.pricerange} onChange={handleChange}>
-                  <option value="ExclusivBELKASSE">
-                    {"Exclusiv (BEL/KASSE)"}
-                  </option>
-                  <option value="Preisgünstig">
-                    Preisgünstig/ Laufer Zahntechnik
-                  </option>
-                </select>
+            <label className="border-field flex justify-between items-center">
+              Hardship cases/ 100%
+              <input
+                type="checkbox"
+                name="hardshipcase"
+                value="hardship"
+                checked={formData.subscriptions.hardship}
+                onChange={handleChange}
+              />
+            </label>
+            <label className="border-field flex justify-between items-center">
+              upper jaw
+              <input
+                type="checkbox"
+                name="upperjaw"
+                value="upperJaw"
+                onChange={handleChange}
+              />
+            </label>
+            <label className="border-field flex justify-between items-center">
+              lower jaw
+              <input
+                type="checkbox"
+                name="lowerjaw"
+                value="lowerJaw"
+                onChange={handleChange}
+              />
+            </label>
 
-                <label className="border-field flex justify-between items-center">
-                  Hardship cases/ 100%
-                  <input type="checkbox" name="hardshipcase" value="hardship"
-            onChange={handleChange} />
-                </label>
-                <label className="border-field flex justify-between items-center">
-                  upper jaw
-                  <input type="checkbox" name="upperjaw" value="upperJaw" onChange={handleChange} />
-                </label>
-                <label className="border-field flex justify-between items-center">
-                  lower jaw
-                  <input type="checkbox" name="lowerjaw" value="lowerJaw"  onChange={handleChange}/>
-                </label>
+            <label className="text-sm mb-[8px]">Unterkiefer</label>
+            <select
+              className="border-field"
+              name="facebow"
+              value={formData.facebow}
+              onChange={handleChange}
+            >
+              <option value="yes">Ja</option>
+              <option value="no">Nein</option>
+            </select>
 
-                <label className="text-sm mb-[8px]">Unterkiefer</label>
-                <select className="border-field" name="facebow" value={formData.facebow} onChange={handleChange}>
-                  <option value="yes">Ja</option>
-                  <option value="no">Nein</option>
-                </select>
+            <label className="text-sm mb-[8px]">Arbeitsart</label>
+            <select
+              className="border-field"
+              name="typework"
+              value={formData.typework}
+              onChange={handleChange}
+            >
+              <option value="">Kronen- und Brückentechnik</option>
+              <option value=""></option>
+            </select>
 
-                <label className="text-sm mb-[8px]">Arbeitsart</label>
-                <select className="border-field" name="typework" value={formData.typework} onChange={handleChange}>
-                  <option value="">Kronen- und Brückentechnik</option>
-                  <option value=""></option>
-                </select>
-
-                <label className="text-sm mb-[8px]">Gesichtsbogen</label>
-                <select className="border-field" name="digital" value={formData.digital} onChange={handleChange}>
-                  <option value="digital">Digital</option>
-                  <option value="Konventionell">Konventionell</option>
-                </select>
-
-              </div>
-
-              <div className="flex flex-col">
-                <label className="text-sm mb-[8px]"> Krankenkasse</label>
-                <input className="border-field" type="text" name="health" value={formData.health} onChange={handleChange} />
-                <label className="text-sm mb-[8px]"> Implantatsystem</label>
-                <input className="border-field" type="text" name="implant" value={formData.implant} onChange={handleChange}/>
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm mb-[8px]">Material</label>
-                <select className="border-field" name="material" value={formData.material} onChange={handleChange}>
-                  <option value="zirkon">Zirkon</option>
-                  <option value="otherOption">NEM</option>
-                  <option value="edelmetall">Edelmetall</option>
-                  <option value="Presskeramik">Presskeramik</option>
-                </select>
-                <label className="border-field flex justify-between items-center">
-                  Vollantom.
-                  <input type="checkbox" name="full" value="fullantom"
-            onChange={handleChange} />
-                </label>
-                <label className="border-field flex justify-between items-center">
-                  IOS Model
-                  <input type="checkbox" name="ios" value="iosm"
-            onChange={handleChange}/>
-                </label>
-              </div>
-            </div>
-          <TableNew />
-          <Description />
-            <div className="flex flex-col">
-            <label  className="text-sm mb-[8px]"> Bemerkungen</label>
-            <textarea className="border-field" name="text" />
-            </div>
-            <div className="w-[50%]">
-        <h2 className="mb-[30px] mt-[80px]">Kontakt-Daten</h2>
-      <form className="" action="">
-        <div className="flex flex-col">
-          <label className="text-sm mb-[8px]">Surname *</label>
-          <input className="border-field" type="text" name="" />
-
-          <label className="text-sm mb-[8px]">House no. *</label>
-          <input className="border-field" type="text" name="" />
-
-          <div className="flex gap-[12px]">
-            <div className="flex flex-col w-[50%]">
-              <label className="text-sm mb-[8px]">Postcode *</label>
-              <input className="border-field" type="text" name="" />
-            </div>
-
-            <div className="flex flex-col w-[50%]">
-              <label className="text-sm mb-[8px]">Location *</label>
-              <input className="border-field" type="text" name="" />
-            </div>
+            <label className="text-sm mb-[8px]">Gesichtsbogen</label>
+            <select
+              className="border-field"
+              name="digital"
+              value={formData.digital}
+              onChange={handleChange}
+            >
+              <option value="digital">Digital</option>
+              <option value="Konventionell">Konventionell</option>
+            </select>
           </div>
-            <h2 className="mt-[36px] mb-[22px]">Zusätzliche Informationen</h2>
-          <div className="flex gap-[12px]">
-            <div className="flex flex-col w-[50%]">
-              <label className="text-sm mb-[8px]">Email doctor *</label>
-              <input className="border-field" type="text" name="" />
-            </div>
 
-            <div className="flex flex-col w-[50%]">
-              <label className="text-sm mb-[8px]">More email</label>
-              <input className="border-field" type="text" name="" />
-            </div>
+          <div className="flex flex-col">
+            <label className="text-sm mb-[8px]"> Krankenkasse</label>
+            <input
+              className="border-field"
+              type="text"
+              name="health"
+              value={formData.health}
+              onChange={handleChange}
+            />
+            <label className="text-sm mb-[8px]"> Implantatsystem</label>
+            <input
+              className="border-field"
+              type="text"
+              name="implant"
+              value={formData.implant}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="text-sm mb-[8px]">Material</label>
+            <select
+              className="border-field"
+              name="material"
+              value={formData.material}
+              onChange={handleChange}
+            >
+              <option value="zirkon">Zirkon</option>
+              <option value="otherOption">NEM</option>
+              <option value="edelmetall">Edelmetall</option>
+              <option value="Presskeramik">Presskeramik</option>
+            </select>
+            <label className="border-field flex justify-between items-center">
+              Vollantom.
+              <input
+                type="checkbox"
+                name="full"
+                value="fullantom"
+                onChange={handleChange}
+              />
+            </label>
+            <label className="border-field flex justify-between items-center">
+              IOS Model
+              <input
+                type="checkbox"
+                name="ios"
+                value="iosm"
+                onChange={handleChange}
+              />
+            </label>
           </div>
         </div>
-      </form>
-    </div>
-          <div className="mt-[80px]">
-            <button onClick={printData} className="button"  type="submit">Generate cost estimate</button>
+        {/* <TableNew data={tableData} /> */}
+        {tableData.length > 0 && <TableNew data={tableData} />} 
+        <Description />
+        <div className="flex flex-col">
+          <label className="text-sm mb-[8px]"> Bemerkungen</label>
+          <textarea
+            className="border-field h-[150px]"
+            name="textarea"
+            value={formData.textarea}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="w-[50%]">
+          <h2 className="mb-[30px] mt-[80px]">Kontakt-Daten</h2>
+          <form className="" action="from-value">
+            <div className="flex flex-col">
+              <label className="text-sm mb-[8px]">Surname *</label>
+              <input
+                className="border-field"
+                type="text"
+                name="surname"
+                value={formData.surname}
+                onChange={handleChange}
+              />
+
+              <label className="text-sm mb-[8px]">House no. *</label>
+              <input
+                className="border-field"
+                type="text"
+                name="houseno"
+                value={formData.houseno}
+                onChange={handleChange}
+              />
+
+              <div className="flex gap-[12px]">
+                <div className="flex flex-col w-[50%]">
+                  <label className="text-sm mb-[8px]">Postcode *</label>
+                  <input
+                    className="border-field"
+                    type="text"
+                    name="postcode"
+                    value={formData.postcode}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="flex flex-col w-[50%]">
+                  <label className="text-sm mb-[8px]">Location *</label>
+                  <input
+                    className="border-field"
+                    type="text"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <h2 className="mt-[36px] mb-[22px]">Zusätzliche Informationen</h2>
+              <div className="flex gap-[12px]">
+                <div className="flex flex-col w-[50%]">
+                  <label className="text-sm mb-[8px]">Email doctor *</label>
+                  <input
+                    className="border-field"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="flex flex-col w-[50%]">
+                  <label className="text-sm mb-[8px]">More email</label>
+                  <input
+                    className="border-field"
+                    type="email"
+                    name="yourmail"
+                    value={formData.yourmail}
+                    onChange={handleChange}
+                  />
+                </div>
+
+              </div>
             </div>
+
           </form>
         </div>
+      </form>
       </section>
+
+      {/* <div>
+        <h1 className="text-[40px] text-[red] text-center">Form Data</h1>
+        <table className="w-full" id="form-table">
+          <tbody>
+            <tr>
+              <td>Pricerange</td>
+              <td>{formData.pricerange}</td>
+            </tr>
+            <tr>
+              <td>Facebow</td>
+              <td>{formData.facebow}</td>
+            </tr>
+            <tr>
+              <td>Typework</td>
+              <td>{formData.typework}</td>
+            </tr>
+            <tr>
+              <td>Digital</td>
+              <td>{formData.digital}</td>
+            </tr>
+            <tr>
+              <td>Health</td>
+              <td>{formData.health}</td>
+            </tr>
+            <tr>
+              <td>Material</td>
+              <td>{formData.material}</td>
+            </tr>
+            <tr>
+              <td>Implant</td>
+              <td>{formData.implant}</td>
+            </tr>
+            <tr>
+              <td>Notes</td>
+              <td>{formData.textarea}</td>
+            </tr>
+            <tr>
+              <td>House no.</td>
+              <td>{formData.houseno}</td>
+            </tr>
+            <tr>
+              <td>Surname</td>
+              <td>{formData.surname}</td>
+            </tr>
+            <tr>
+              <td>Postcode</td>
+              <td>{formData.postcode}</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>{formData.location}</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>{formData.email}</td>
+            </tr>
+            <tr>
+              <td>Your mail</td>
+              <td>{formData.yourmail}</td>
+            </tr>
+            <tr>
+              <td>Hardship case</td>
+              <td>{formData.hardshipcase ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>Upper jaw</td>
+              <td>{formData.upperjaw ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>Lower jaw</td>
+              <td>{formData.lowerjaw ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>Fullantom</td>
+              <td>{formData.full ? "Selected" : "Not Selected"}</td>
+            </tr>
+            <tr>
+              <td>IOS Model</td>
+              <td>{formData.ios ? "Selected" : "Not Selected"}</td>
+            </tr>
+            {Object.entries(formData.subscriptions).map(
+              ([key, value]) =>
+                value && (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td>Selected</td>
+                  </tr>
+                )
+            )}
+            {formData.hobbies.map((hobby) => (
+              <tr key={hobby}>
+                <td>{hobby}</td>
+                <td>Selected</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div> */}
+            <div className="mt-[80px]">
+          <button onClick={handleSubmit} className="button mr-4" type="submit">
+            Generate cost estimate
+          </button>
+        </div>
     </div>
   );
-}
+};
+
+export default Home;
