@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const TableNew = ({data}) => {
+const TableNew = ({ data }) => {
   if (!data || data.length === 0) {
     return <div>No data available</div>;
   }
@@ -34,4 +34,3 @@ TableNew.propTypes = {
 };
 
 export default TableNew;
-

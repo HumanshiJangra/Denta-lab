@@ -30,9 +30,43 @@ img {
   background: var(--Neutrals-White, #FFF);
   padding: 12px 12px 12px 16px;
   margin-bottom: 20px;
+  color: #1A1613;
+  font-size: 16px;
+}
+.cursor {
   cursor: pointer;
 }
-
+button.button.margin-left {
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+span.error {
+  color: red;
+  font-size: 14px;
+  position: relative;
+  top: -6px;
+  margin-bottom: 2px;
+}
+form.from-value-2 label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+form.from-value-2 .border-field {
+  margin-bottom: 8px;
+}
+.border-field::-webkit-input-placeholder { 
+  color: #1A1613;
+}
+.border-field::-moz-placeholder { 
+  color: #1A1613;
+}
+.border-field:-ms-input-placeholder { 
+  color: #1A1613;
+}
+.border-field:-moz-placeholder { 
+  color: #1A1613;
+}
 .from-value select {
   -webkit-appearance: none;
   appearance: none;
@@ -98,16 +132,9 @@ table.custom-table tbody td {
   border-right: 3px solid #898787;
 }
 .breadcrumb-item.active {
-  color: #007bff; /* Active item color */
+  color: #007bff; 
 }
 
 .breadcrumb-item:not(.active) {
-  color: #6c757d; /* Inactive item color */
+  color: #6c757d; 
 }
-
-
-
-
-
-
-
