@@ -122,37 +122,37 @@ const Home = () => {
     // Validate surname field
     const ctm_regex_lettes = /^[A-Za-z ]*$/;
     if (!formData.surname.trim()) {
-      newErrors.surname = "Surname is required";
+      newErrors.surname = "Dieses Feld ist erforderlich";
     } else if (!ctm_regex_lettes.test(formData.surname)) {
-      newErrors.surname = "Surname can only contain letters";
+      newErrors.surname = "Der Name darf nur Buchstaben enthalten";
     } else {
       newErrors.surname = "";
     }
 
     if (!formData.houseno.trim()) {
-      newErrors.houseno = "House No. is required";
+      newErrors.houseno = "Dieses Feld ist erforderlich";
     } else {
       newErrors.houseno = "";
     }
 
     if (!formData.postcode.trim()) {
-      newErrors.postcode = "Postcode No. is required";
+      newErrors.postcode = "Dieses Feld ist erforderlich";
     } else if (!/^\d+$/.test(formData.postcode)) {
-      newErrors.postcode = "postcode can only contain Numbers";
+      newErrors.postcode = "Die Postleitzahl darf nur Zahlen enthalten";
     } else {
       newErrors.postcode = "";
     }
 
     if (!formData.location.trim()) {
-      newErrors.location = "location is required";
+      newErrors.location = "Dieses Feld ist erforderlich";
     } else {
       newErrors.location = "";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "Dieses Feld ist erforderlich";
     } else if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,3}$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = "Bitte geben Sie eine gültige E-Mail-Adresse ein";
     } else {
       newErrors.email = "";
     }
