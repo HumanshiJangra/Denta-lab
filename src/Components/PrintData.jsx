@@ -40,7 +40,7 @@ export default function PrintData() {
               </p>
               <div className="box h-[200px] my-10 border-solid border-[grey] border-[2px] p-4">
                 <p>Name: {formData.surname}</p>
-                <p>Adresse{formData.houseno}</p>
+                <p>Adresse: {formData.houseno}</p>
 
                 <p>Email: {formData.email}</p>
               </div>

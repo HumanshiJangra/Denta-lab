@@ -5,7 +5,7 @@ const TableNew = () => {
     <div>
       <table className="my-[50px] custom-table w-full ">
         <tbody>
-          <tr>
+          <tr className="ctm_ok_wrp">
             <td>OK</td>
             <td>
               <select>
@@ -222,7 +222,7 @@ const TableNew = () => {
             <td>37</td>
             <td>38</td>
           </tr>
-          <tr>
+          <tr className="ctm_uk_wrp">
             <td>UK</td>
             <td>
               <select>

@@ -164,6 +164,8 @@ const Home = () => {
       // If there are validation errors, don't proceed with form submission
       return;
     }
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     console.log("Hiiii These are the form data", formData);
 
@@ -295,7 +297,9 @@ const Home = () => {
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-sm mb-[8px]">Material</label>
+              <label className="text-sm mb-[8px] ctm_material_select">
+                Material
+              </label>
               <select
                 className="border-field"
                 name="material"
