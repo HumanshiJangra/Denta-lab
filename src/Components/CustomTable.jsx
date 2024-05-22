@@ -10,177 +10,417 @@ const TableNew = () => {
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
           </tr>
@@ -227,176 +467,417 @@ const TableNew = () => {
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
-                <option value="IS">IS</option>
-                <option value="TK">TK</option>
-                <option value="H">H</option>
-                <option value="E">E</option>
-                <option value="ST">ST</option>
-              </select>
-            </td>
-            <td>
-              <select>
-                <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
             <td>
               <select>
                 <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
                 <option value="CD">CD</option>
                 <option value="IS">IS</option>
                 <option value="TK">TK</option>
                 <option value="H">H</option>
                 <option value="E">E</option>
-                <option value="ST">ST</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
+              </select>
+            </td>
+            <td>
+              <select>
+                <option value=""></option>
+                <option value="k">K</option>
+                <option value="b">B</option>
+                <option value="kv">KV</option>
+                <option value="bv">BV</option>
+                <option value="km">KM</option>
+                <option value="bm">BM</option>
+                <option value="v">V</option>
+                <option value="ik">IK</option>
+                <option value="ig">IG</option>
+                <option value="t">T</option>
+                <option value="tv">TV</option>
+                <option value="tm">TM</option>
+                <option value="mg">MG</option>
+                <option value="CD">CD</option>
+                <option value="IS">IS</option>
+                <option value="TK">TK</option>
+                <option value="H">H</option>
+                <option value="E">E</option>
+                <option value="o">O</option>
+                <option value="ST">St</option>
+                <option value="sch">Sch</option>
               </select>
             </td>
           </tr>
