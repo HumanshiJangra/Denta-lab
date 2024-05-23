@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../assets/image 7.png";
 import { useLocation } from "react-router-dom";
 import TableNew from "../Components/TableNew";
@@ -49,34 +48,102 @@ export default function PrintData() {
               <img className="max-w-[200px] ml-auto " src={logo} alt="" />
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between mb-4">
             <p className="w-[60%]">
               Patient:............................................................................
             </p>
-            <p className="w-[40%]">Datum:.....................</p>
+            <p className="">Datum:............................................
+         
+            </p>
           </div>
           <div className="checkbox-form grid grid-cols-2">
             <div className="left">
-              <p>
-                EXCLUSIVE(BEL/Kasse) <span></span>
-              </p>
+              <label>
+                EXCLUSIVE(BEL/Kasse)
+                {formData.pricerange === "ExclusivBELKASSE" && (
+                <input type="checkbox" name="ExclusivBELKASSE" 
+                checked={formData.pricerange === "ExclusivBELKASSE"}
+                id="" />
+                )}
+              </label>
+              <label>
+              Preisgünstig/ Laufer Zahntechnik
+                {formData.pricerange === "Preisgünstig" && (
+                <input type="checkbox" name="Preisgünstig" 
+                checked={formData.pricerange === "Preisgünstig"}
+                id="" />
+                )}
+              </label>
+              <div>
+                <h2>Krankenkasse</h2>
+                  <p>{formData.health}</p>
+                <h2>Implantatsystem</h2>
+                <p>{formData.implant}</p>
+              </div>
             </div>
             <div className="right">
-              <p>Material:</p>
+              <p>Material:
+              {/* {formData.material} */}
+              </p>
+              
+              <label className="">
+              Edelmetall:   </label>
+              {formData.material === "edelmetall" && (
+                <input
+                  type="checkbox"
+                  name="edelmetall"
+                  checked={formData.material === "edelmetall"}
+                />
+              )}
+            
+              <label className="">
+                NEM:
+                </label>
+                {formData.material === "nem" && (
+                <input
+                  type="checkbox"
+                  name="otherOption"
+                  checked={formData.material === "otherOption"}
+                />
+              )}
+           
+              <label className="">
+              Presskeramik:
+              </label>
+              {formData.material === "Presskeramik" && (
+                <input
+                  type="checkbox"
+                  name="Presskeramik"
+                  checked={formData.material === "Presskeramik"}
+                />
+              )}
+             
+              <label className="">
+              Zirkon:
+              </label>
+              {formData.material === "zirkon" && (
+                <input
+                  type="checkbox"
+                  name="zirkon"
+                  checked={formData.material === "zirkon"}
+                />
+              )}
               <div>
                 <p></p>
               </div>
             </div>
           </div>
 
-          <TableNew tableData={tableData} />
+<TableNew tableData={formData.tableData} />
+
+         
           <Description />
           <textarea
             className="h-[200px] border-solid border-[grey] border-[1px] w-full p-2"
             name=""
             id=""
           ></textarea>
-          <p>Hiiiiiiiiiiiiiiiiiii::::{formData.surname}</p>
+          <p>{formData.surname}</p>
           <p>{formData.pricerange}</p>
           <p>{formData.houseno}</p>
           <p>{formData.email}</p>

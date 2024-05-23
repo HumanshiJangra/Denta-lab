@@ -6,7 +6,7 @@ import jsPDF from 'jspdf';
 import { Counter } from '../Features/Counter/Counter';
 import PrintData from '../Components/PrintData';
 import generatePDF from '../Pages/Home'
-export default function PdfPage() {
+export default function PdfPage(formData, tableData) {
 
 
   return (
@@ -26,7 +26,7 @@ export default function PdfPage() {
           <h2>Ihr Kostenvoranschlag wurde erfolgreich generiert und an folgende Email Adressen geschickt.</h2>
         </div>
       {/* <Counter /> */}
-      <PrintData />
+      <PrintData formData={formData} tableData={tableData}/>
 
       </section>
 

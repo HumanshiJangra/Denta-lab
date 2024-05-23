@@ -1,36 +1,88 @@
-import PropTypes from "prop-types";
+import React from "react";
 
-const TableNew = ({ data }) => {
-  if (!data || data.length === 0) {
-    return <div>No data available</div>;
-  }
-  return (
-    <table className="table-auto w-full mt-8">
-      <thead>
-        <tr>
-          <th className="px-4 py-2 border">Property</th>
-          <th className="px-4 py-2 border">Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, index) => (
-          <tr key={index}>
-            <td className="border px-4 py-2">{row.property}</td>
-            <td className="border px-4 py-2">{row.value}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+const TableNew = ({ tableData, onTableChange }) => {
+  const options = [
+    { value: "", label: "" },
+    { value: "k", label: "K" },
+    { value: "b", label: "B" },
+    { value: "kv", label: "KV" },
+    { value: "bv", label: "BV" },
+    { value: "km", label: "KM" },
+    { value: "bm", label: "BM" },
+    { value: "v", label: "V" },
+    { value: "ik", label: "IK" },
+    { value: "ig", label: "IG" },
+    { value: "t", label: "T" },
+    { value: "tv", label: "TV" },
+    { value: "tm", label: "TM" },
+    { value: "mg", label: "MG" },
+    { value: "CD", label: "CD" },
+    { value: "IS", label: "IS" },
+    { value: "TK", label: "TK" },
+    { value: "H", label: "H" },
+    { value: "E", label: "E" },
+    { value: "o", label: "O" },
+    { value: "ST", label: "ST" },
+    { value: "sch", label: "Sch" },
+  ];
+
+  const renderSelect = (type, index) => (
+    <select
+      value={tableData[type][index]}
+      onChange={(e) => onTableChange(type, index, e.target.value)}
+    >
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
   );
-};
 
-TableNew.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      property: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  return (
+    <div>
+      <table className="my-[50px] custom-table w-full ">
+        <tbody>
+        <tr>
+            <td></td>
+            {Array.from({ length: 16 }).map((_, index) => (
+              <td key={`start-${index}`}></td>
+            ))}
+          </tr>
+          <tr className="ctm_ok_wrp">
+            <td>OK</td>
+            {Array.from({ length: 16 }).map((_, index) => (
+              <td key={index}>{renderSelect("ok", index)}</td>
+            ))}
+          </tr>
+          <tr>
+            <td></td>
+            {[18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28].map((number) => (
+              <td key={number}>{number}</td>
+            ))}
+          </tr>
+          <tr>
+            <td></td>
+            {[48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38].map((number) => (
+              <td key={number}>{number}</td>
+            ))}
+          </tr>
+          <tr className="ctm_uk_wrp">
+            <td>UK</td>
+            {Array.from({ length: 16 }).map((_, index) => (
+              <td key={index}>{renderSelect("uk", index)}</td>
+            ))}
+          </tr>
+          <tr>
+            <td></td>
+            {Array.from({ length: 17 }).map((_, index) => (
+              <td key={`end-${index}`}></td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default TableNew;

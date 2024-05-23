@@ -121,8 +121,9 @@ select:focus-visible {
 table.custom-table thead th {
   font-weight: 400;
 }
-table.custom-table td, table.custom-table th {
+table.custom-table td {
   padding: 10px;
+  height: 45px;
 }
 table.custom-table tbody td {
   border: 1px solid #cbd5e1;

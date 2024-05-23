@@ -7,6 +7,7 @@ import Description from "../Components/Description";
 import CustomTable from "../Components/CustomTable";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+
 const Home = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -36,6 +37,10 @@ const Home = () => {
     lowerjaw: false,
     full: false,
     ios: false,
+    tableData: {
+      ok: Array(9).fill(""),
+      uk: Array(9).fill(""),
+    },
   });
 
   const [errors, setErrors] = useState({
@@ -47,6 +52,7 @@ const Home = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    const updatedValue = type === "checkbox" ? checked : value;
     if (type === "checkbox") {
       if (name === "subscriptions") {
         setFormData({
@@ -69,50 +75,31 @@ const Home = () => {
       setFormData({ ...formData, [name]: value });
     }
     if (name === "material") {
-      updateTableData(value);
+      // Reset table select options when material changes
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: updatedValue,
+        tableData: {
+          ok: Array(9).fill(""),
+          uk: Array(9).fill(""),
+        },
+      }));
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: updatedValue,
+      }));
     }
   };
 
-  const [tableData, setTableData] = useState([]);
-  useEffect(() => {
-    updateTableData("zirkon");
-  }, []);
-  const updateTableData = (material) => {
-    let data = [];
-    switch (material) {
-      case "zirkon":
-        data = [
-          { property: "hiiiii", value: "Humanshhiiiiiiii" },
-          { property: "Color", value: "White" },
-          { property: "Cost", value: "$200" },
-        ];
-        break;
-      case "otherOption":
-        data = [
-          { property: "Strength", value: "Medium" },
-          { property: "Color", value: "Grey" },
-          { property: "Cost", value: "$150" },
-        ];
-        break;
-      case "edelmetall":
-        data = [
-          { property: "Reactttttttttt", value: "Very High" },
-          { property: "Color", value: "Gold" },
-          { property: "Cost", value: "$300" },
-        ];
-        break;
-      case "Presskeramik":
-        data = [
-          { property: "Strength", value: "High" },
-          { property: "Color", value: "White" },
-          { property: "Cost", value: "$250" },
-        ];
-        break;
-      default:
-        data = [];
-    }
-    setTableData(data);
+  const handleTableChange = (type, index, value) => {
+    setFormData((prevFormData) => {
+      const updatedTableData = { ...prevFormData.tableData };
+      updatedTableData[type][index] = value;
+      return { ...prevFormData, tableData: updatedTableData };
+    });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -341,8 +328,8 @@ const Home = () => {
             />
           </div>
 
-          <CustomTable />
-
+          {/* <CustomTable /> */}
+          <TableNew tableData={formData.tableData} onTableChange={handleTableChange} />
           <Description />
         </form>
         <div className="w-[50%]">
