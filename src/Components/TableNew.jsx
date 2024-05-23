@@ -1,6 +1,6 @@
 import React from "react";
 
-const TableNew = ({ tableData, onTableChange }) => {
+const TableNew = ({ tableData, onTableChange, isPrintMode }) => {
   const options = [
     { value: "", label: "" },
     { value: "k", label: "K" },
@@ -30,6 +30,7 @@ const TableNew = ({ tableData, onTableChange }) => {
     <select
       value={tableData[type][index]}
       onChange={(e) => onTableChange(type, index, e.target.value)}
+      disabled={isPrintMode}
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>

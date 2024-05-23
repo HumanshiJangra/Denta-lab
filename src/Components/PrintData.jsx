@@ -56,8 +56,9 @@ export default function PrintData() {
          
             </p>
           </div>
-          <div className="checkbox-form grid grid-cols-2">
-            <div className="left">
+          <div className="checkbox-form grid grid-cols-2 gap-5">
+            <div className="left flex gap-4">
+              <div className="grid">
               <label>
                 EXCLUSIVE(BEL/Kasse)
                 {formData.pricerange === "ExclusivBELKASSE" && (
@@ -74,9 +75,10 @@ export default function PrintData() {
                 id="" />
                 )}
               </label>
+              </div>
               <div>
                 <h2>Krankenkasse</h2>
-                  <p>{formData.health}</p>
+                  <p className="border-solid border-[#878282] border-b-2 ">{formData.health}</p>
                 <h2>Implantatsystem</h2>
                 <p>{formData.implant}</p>
               </div>
@@ -85,7 +87,8 @@ export default function PrintData() {
               <p>Material:
               {/* {formData.material} */}
               </p>
-              
+              <div className="grid grid-cols-2">
+                <div>
               <label className="">
               Edelmetall:   </label>
               {formData.material === "edelmetall" && (
@@ -95,7 +98,8 @@ export default function PrintData() {
                   checked={formData.material === "edelmetall"}
                 />
               )}
-            
+              </div>
+            <div>
               <label className="">
                 NEM:
                 </label>
@@ -106,7 +110,8 @@ export default function PrintData() {
                   checked={formData.material === "otherOption"}
                 />
               )}
-           
+           </div>
+           <div>
               <label className="">
               Presskeramik:
               </label>
@@ -117,7 +122,8 @@ export default function PrintData() {
                   checked={formData.material === "Presskeramik"}
                 />
               )}
-             
+             </div>
+             <div>
               <label className="">
               Zirkon:
               </label>
@@ -128,13 +134,15 @@ export default function PrintData() {
                   checked={formData.material === "zirkon"}
                 />
               )}
+              </div>
+              </div>
               <div>
                 <p></p>
               </div>
             </div>
           </div>
 
-<TableNew tableData={formData.tableData} />
+<TableNew tableData={formData.tableData} isPrintMode={true} />
 
          
           <Description />
