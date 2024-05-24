@@ -22,7 +22,7 @@ export default function PdfPage(formData, tableData) {
         </div>
       </section>
       <section className="container mx-auto px-5">
-        <div className="py-[40px]">
+        <div className="pt-[40px]">
           <h2>Ihr Kostenvoranschlag wurde erfolgreich generiert und an folgende Email Adressen geschickt.</h2>
         </div>
       {/* <Counter /> */}

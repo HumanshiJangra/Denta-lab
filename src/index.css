@@ -67,7 +67,7 @@ form.from-value-2 .border-field {
 .border-field:-moz-placeholder { 
   color: #1A1613;
 }
-.from-value select {
+.from-value select, .custom-table select {
   -webkit-appearance: none;
   appearance: none;
   background: url(./assets/arrow-down.svg);
@@ -139,3 +139,43 @@ table.custom-table tbody td {
 .breadcrumb-item:not(.active) {
   color: #6c757d; 
 }
+table.custom-table tbody td select {
+  cursor: pointer;
+}
+.checkboxes input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.checkboxes label:after {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #888989;
+  padding: 7px;
+  display: inline-block;
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.checkboxes label::after + input:checked {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #0079bf;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkboxes {
+  position: relative;
+}
+/* .checkboxes */

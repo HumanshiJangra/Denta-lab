@@ -76,7 +76,7 @@ const TableNew = ({ tableData, onTableChange, isPrintMode }) => {
           </tr>
           <tr>
             <td></td>
-            {Array.from({ length: 17 }).map((_, index) => (
+            {Array.from({ length: 16 }).map((_, index) => (
               <td key={`end-${index}`}></td>
             ))}
           </tr>

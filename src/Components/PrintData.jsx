@@ -25,14 +25,16 @@ export default function PrintData() {
   };
   return (
     <div className="container mx-auto px-5">
+       <p className="pb-[40px]">{formData.email}</p>
       {formData ? (
         <div id="pdf-content" className="text-[#888989] px-12 main relative">
+         
           <div className="absolute w-[40%] p-5 bg-[#FFD402] top-0 left-0 ">
-            <p className=" text-white text-sm ">HIGH-TECH-MADE IN GERMANY</p>
+            <p className=" text-white text-sm text-center">HIGH-TECH-MADE IN GERMANY</p>
           </div>
           <div className="pt-28 grid grid-cols-2 ">
             <div className="left">
-              <p className="font-medium">
+              <p className="font-medium my-5">
                 {" "}
                 <span className="bg-[#FFD402] h-3 w-3 mr-2 inline-block "></span>
                 Wir bitten um Kostenvoranschlag
@@ -44,8 +46,10 @@ export default function PrintData() {
                 <p>Email: {formData.email}</p>
               </div>
             </div>
-            <div className="right">
+            <div className="right text-right ">
               <img className="max-w-[200px] ml-auto " src={logo} alt="" />
+              <h2 className="mt-4 font-bold">Tel.: 0621 48 488 0</h2>
+              <h2 className="font-bold">Mail: <a href="kontakt@laufer-zahntechnik.de">kontakt@laufer-zahntechnik.de</a></h2>
             </div>
           </div>
           <div className="flex justify-between mb-4">
@@ -57,24 +61,29 @@ export default function PrintData() {
             </p>
           </div>
           <div className="checkbox-form grid grid-cols-2 gap-5">
-            <div className="left flex gap-4">
-              <div className="grid">
+            <div className="left justify-between flex gap-4">
+              <div className="w-[30%]">
+              <div className="checkboxes">
               <label>
-                EXCLUSIVE(BEL/Kasse)
+                EXCLUSIVE <br/>(BEL/Kasse)
                 {formData.pricerange === "ExclusivBELKASSE" && (
                 <input type="checkbox" name="ExclusivBELKASSE" 
                 checked={formData.pricerange === "ExclusivBELKASSE"}
                 id="" />
                 )}
               </label>
+              
+              </div>
+              <div className="checkboxes">
               <label>
-              Preisgünstig/ Laufer Zahntechnik
+              Preisgünstig/ <br/>Laufer Zahntechnik
                 {formData.pricerange === "Preisgünstig" && (
                 <input type="checkbox" name="Preisgünstig" 
                 checked={formData.pricerange === "Preisgünstig"}
                 id="" />
                 )}
               </label>
+              </div>
               </div>
               <div>
                 <h2>Krankenkasse</h2>
@@ -88,7 +97,7 @@ export default function PrintData() {
               {/* {formData.material} */}
               </p>
               <div className="grid grid-cols-2">
-                <div>
+                <div className="checkboxes">
               <label className="">
               Edelmetall:   </label>
               {formData.material === "edelmetall" && (
@@ -99,7 +108,7 @@ export default function PrintData() {
                 />
               )}
               </div>
-            <div>
+            <div className="checkboxes">
               <label className="">
                 NEM:
                 </label>
@@ -111,7 +120,7 @@ export default function PrintData() {
                 />
               )}
            </div>
-           <div>
+           <div className="checkboxes">
               <label className="">
               Presskeramik:
               </label>
@@ -123,7 +132,7 @@ export default function PrintData() {
                 />
               )}
              </div>
-             <div>
+             <div className="checkboxes">
               <label className="">
               Zirkon:
               </label>
@@ -151,15 +160,16 @@ export default function PrintData() {
             name=""
             id=""
           ></textarea>
-          <p>{formData.surname}</p>
+          {/* <p>{formData.surname}</p>
           <p>{formData.pricerange}</p>
           <p>{formData.houseno}</p>
           <p>{formData.email}</p>
-          <p>{formData.yourmail}</p>
+          <p>{formData.yourmail}</p> */}
         </div>
       ) : (
         <p>No data available</p>
       )}
+      <div className="text-right px-12">
       <button
         onClick={downloadPdf}
         className="button margin-left"
@@ -167,6 +177,7 @@ export default function PrintData() {
       >
         PDF Herunterladen
       </button>
+      </div>
     </div>
   );
 }
