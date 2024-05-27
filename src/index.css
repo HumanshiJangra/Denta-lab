@@ -142,7 +142,7 @@ table.custom-table tbody td {
 table.custom-table tbody td select {
   cursor: pointer;
 }
-.checkboxes input {
+/* .checkboxes input {
   padding: 0;
   height: initial;
   width: initial;
@@ -177,5 +177,52 @@ table.custom-table tbody td select {
 }
 .checkboxes {
   position: relative;
-}
+} */
 /* .checkboxes */
+
+.checkboxes label {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkboxes input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #888989;
+  border-radius: 3px;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkboxes label .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 7px;
+  height: 12px;
+  border: solid #888989;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.checkboxes label input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom-check-wrap .checkboxes {
+  width: 50%;
+}
