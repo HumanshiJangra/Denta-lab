@@ -71,7 +71,7 @@ export default function PrintData() {
               <div className="w-[30%]">
                 <div className="checkboxes">
                   <label>
-                    EXCLUSIVE <br />
+                    EXCLUSIVE <br/>
                     (BEL/Kasse)
                     {formData.pricerange === "ExclusivBELKASSE" && (
                       <input
@@ -86,7 +86,7 @@ export default function PrintData() {
                 </div>
                 <div className="checkboxes">
                   <label>
-                    Preisgünstig/ <br />
+                    Preisgünstig/ <br/>
                     Laufer Zahntechnik
                     {formData.pricerange === "Preisgünstig" && (
                       <input
@@ -131,7 +131,7 @@ export default function PrintData() {
                 <div className="checkboxes">
                   <label className="">
                     NEM:
-                    {formData.material === "nem" && (
+                    {formData.material === "otherOption" && (
                       <input
                         type="checkbox"
                         name="otherOption"
